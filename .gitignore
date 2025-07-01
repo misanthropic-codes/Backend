@@ -1,0 +1,40 @@
+# Node modules
+node_modules/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Build output (TypeScript or Babel)
+dist/
+build/
+*.tsbuildinfo
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Coverage reports
+coverage/
+.nyc_output/
+
+# IDE & OS generated
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Optional: lock files (choose one lock strategy)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
