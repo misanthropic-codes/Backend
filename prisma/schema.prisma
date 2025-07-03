@@ -20,6 +20,7 @@ model Group {
   description String
   members     User[]    @relation("UserGroups")
   createdAt   DateTime  @default(now())
+  posts       Post[]
 }
 
 model User {
@@ -30,4 +31,26 @@ model User {
   role      Role
   groups    Group[]  @relation("UserGroups")
   createdAt DateTime @default(now())
+  posts     Post[]
+}
+
+enum PostType {
+  TEXT
+  IMAGE
+  VIDEO
+}
+
+model Post {
+  id        String    @id @default(uuid())
+  content   String
+  type      PostType
+  author    User      @relation(fields: [authorId], references: [id])
+  authorId  String
+  group     Group?    @relation(fields: [groupId], references: [id])
+  groupId   String?
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  @@index([groupId])
+  @@index([authorId])
+  @@index([createdAt])
 }
