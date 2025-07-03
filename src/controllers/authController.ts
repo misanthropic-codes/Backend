@@ -56,7 +56,12 @@ export const login = async (req: Request, res: Response) => {
     }
     // Use short-lived JWTs and avoid exposing sensitive info
     const token = jwt.sign(
-      { userId: user.id, role: user.role },
+      {
+        id: user.id, // use 'id' not 'userId' for consistency with your middleware
+        email: user.email,
+        username: user.username,
+        role: user.role
+      },
       JWT_SECRET,
       { expiresIn: '15m' } // shorter expiry for security
     );
