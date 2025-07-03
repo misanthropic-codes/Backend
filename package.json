@@ -1,20 +1,37 @@
 {
   "name": "bullbear",
   "version": "1.0.0",
-  "main": "index.js",
- "scripts": {
-  "build": "tsc",
-  "start": "node dist/index.js",
-  "dev": "ts-node src/index.ts"
-},
-
+  "main": "src/server.ts",
+  "scripts": {
+    "dev": "nodemon --watch src --ext ts,js,json --exec ts-node src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "prisma:migrate": "prisma migrate dev --name init",
+    "prisma:generate": "prisma generate"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "@types/express": "^5.0.3",
+    "@types/jsonwebtoken": "^9.0.10",
     "@types/node": "^24.0.8",
+    "nodemon": "^3.1.10",
+    "prisma": "^6.10.1",
     "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
     "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.10.1",
+    "@types/express-rate-limit": "^5.1.3",
+    "bcrypt": "^6.0.0",
+    "dotenv": "^17.0.0",
+    "express": "^5.1.0",
+    "express-rate-limit": "^7.5.1",
+    "jsonwebtoken": "^9.0.2",
+    "zod": "^3.22.2"
   }
 }
