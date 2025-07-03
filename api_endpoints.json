@@ -1,0 +1,77 @@
+[
+  {
+    "method": "POST",
+    "path": "/auth/signup",
+    "description": "User signup"
+  },
+  {
+    "method": "POST",
+    "path": "/auth/login",
+    "description": "User login"
+  },
+  {
+    "method": "POST",
+    "path": "/groups",
+    "description": "Create a group (auth required)"
+  },
+  {
+    "method": "GET",
+    "path": "/groups",
+    "description": "Get all groups"
+  },
+  {
+    "method": "GET",
+    "path": "/groups/:id",
+    "description": "Get group by ID"
+  },
+  {
+    "method": "POST",
+    "path": "/groups/:id/join",
+    "description": "Join a group (auth required, rate limited)"
+  },
+  {
+    "method": "POST",
+    "path": "/groups/:id/leave",
+    "description": "Leave a group (auth required, rate limited)"
+  },
+  {
+    "method": "POST",
+    "path": "/posts",
+    "description": "Create a post (auth required, rate limited)"
+  },
+  {
+    "method": "GET",
+    "path": "/posts",
+    "description": "Get global feed (all posts)"
+  },
+  {
+    "method": "GET",
+    "path": "/groups/:id/posts",
+    "description": "Get posts for a group"
+  },
+  {
+    "method": "GET",
+    "path": "/posts/:id",
+    "description": "Get post by ID"
+  },
+  {
+    "method": "DELETE",
+    "path": "/posts/:id",
+    "description": "Delete post (auth required)"
+  },
+  {
+    "method": "POST",
+    "path": "/comments",
+    "description": "Create a comment or reply (auth required)"
+  },
+  {
+    "method": "GET",
+    "path": "/comments/post/:postId",
+    "description": "Get all comments for a post as a nested tree"
+  },
+  {
+    "method": "DELETE",
+    "path": "/comments/:commentId",
+    "description": "Delete a comment (author only, auth required)"
+  }
+]

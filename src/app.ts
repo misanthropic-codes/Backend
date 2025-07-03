@@ -5,6 +5,7 @@ import authRoutes from "./routes/auth";
 import groupRoutes from "./routes/groups.route";
 import postRoutes from "./routes/posts.route";
 import { errorHandler } from "./middleware/error.middleware";
+import commentsRoutes from './routes/comments.route';
 import { helmetMiddleware } from './middlewares/helmet.middleware';
 import { compressionMiddleware } from './middlewares/compression.middleware';
 import { morganMiddleware } from './middlewares/morgan.middleware';
@@ -26,8 +27,10 @@ app.use(express.json());
 app.use('/auth', authRoutes);
 
 
+
 app.use('/groups', groupRoutes);
 app.use('/', postRoutes);
+app.use('/comments', commentsRoutes);
 
 
 // Health check

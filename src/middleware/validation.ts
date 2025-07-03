@@ -1,3 +1,13 @@
+// Generic Zod validation middleware
+import { AnyZodObject } from 'zod';
+export const validate = (schema: AnyZodObject) => (req: Request, res: Response, next: NextFunction) => {
+  try {
+    schema.parse(req.body);
+    next();
+  } catch (err: any) {
+    res.status(400).json({ error: err.errors });
+  }
+};
 import { Request, Response, NextFunction } from 'express';
 import { z } from 'zod';
 
