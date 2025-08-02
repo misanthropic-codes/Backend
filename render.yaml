@@ -20,4 +20,3 @@ databases:
   - name: bullbear-db
     region: oregon
     plan: starter
-    postgresVersion: 16
