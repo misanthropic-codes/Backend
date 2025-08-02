@@ -19,4 +19,4 @@ services:
 databases:
   - name: bullbear-db
     region: oregon
-    plan: starter
+    plan: free
